@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  app:
+    build:
+      dockerfile: ./Dockerfile
+    image: gui-test
+    container_name: gui-test-container
+    volumes:
+      - ./src:/usr/src
+      # WSL
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /mnt/wslg:/mnt/wslg
+    tty: true
+    environment:
+      #- DISPLAY=:0
+      #- WAYLAND_DISPLAY=wayland-0
+      #- XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
+      #- PULSE_SERVER=unix:/mnt/wslg/PulseServer
+      - DISPLAY=$DISPLAY
+      - WAYLAND_DISPLAY=$WAYLAND_DISPLAY
+      - XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR
+      - PULSE_SERVER=$PULSE_SERVER

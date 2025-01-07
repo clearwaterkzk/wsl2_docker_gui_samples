@@ -7,10 +7,12 @@ sample code to show GUI in WSL2 Docker on Windows
 $ docker compose build
 
 # run docker container
-$ docker compose up
+$ docker compose up -d
 ```
 
 ## result
+After running the container, you can run the following commands to see the results. GUI will be displayed on Windows.
+
 ### matplotlib
 ```bash
 $ python show_plot_matplotlib.py    
